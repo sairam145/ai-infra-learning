@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+.env.*
+*.log
+.vscode/
+# secrets & cloud state
+.aws/
+*.pem
+*.tfstate
+*.tfstate.*
+.terraform/
+# models & big data
+models/
+*.pth
+*.pt
+*.safetensors
+*.gguf
+*.bin
+*.ckpt
+*.h5
+*.pkl
