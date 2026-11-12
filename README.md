@@ -22,7 +22,7 @@ I learn by building. Every lesson ends with something working, committed here.
 | # | Module | Status | Notes |
 |---|---|---|---|
 | 01 | Foundations | ✅ Done | [8 lessons + exercises guide](modules/01-foundations/README.md) |
-| 02 | Cloud Computing | ⏳ Next | |
+| 02 | AWS + Terraform (AWS-only track) | 🚧 In progress | [16-lesson guide](modules/02-aws/AWS-TERRAFORM-GUIDE.md) · [Terraform zero→advanced](modules/02-aws/TERRAFORM-ZERO-TO-ADVANCED.md) · [module page](modules/02-aws/README.md) |
 | 03 | Containerization | ⬜ | |
 | 04 | Kubernetes | ⬜ | |
 | 05 | Data Pipelines | ⬜ | Skim: less relevant to GPU serving |
@@ -224,7 +224,7 @@ minikube stop                                  # free RAM when done
 
 ## 7. Next steps
 
-1. **Module 2:** Cloud Computing
+1. **Module 2:** AWS + Terraform, Lesson 02 (VPC networking) in the [lesson guide](modules/02-aws/AWS-TERRAFORM-GUIDE.md)
 2. **Request the AWS GPU quota:** Service Quotas → EC2 → *Running On-Demand G and VT instances* → 8 vCPUs in **us-east-1**
 3. **Phase 1 of the platform:** `terraform apply` the EKS + GPU node pool, then confirm Kubernetes sees the GPU
 4. **Cost rule:** GPU cluster ≈ $0.80/hour. Run `terraform destroy` at the end of every session.
