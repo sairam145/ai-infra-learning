@@ -45,6 +45,7 @@ I learn by building. Every lesson ends with something working, committed here.
 | 07 | [Docker Basics](modules/01-foundations/lesson-07/README.md) | — |
 | 08 | [API Development](modules/01-foundations/lesson-08/README.md) | — |
 | — | [Exercises 01–10 explained](modules/01-foundations/exercises/README.md) | Labs + exercises built into the main project |
+| 📋 | [**Module 1 cheat sheet**](modules/01-foundations/CHEATSHEET.md) | Concepts, numbers, and commands on one page |
 
 ### Main project: LLM platform on AWS
 

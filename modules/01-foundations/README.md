@@ -19,6 +19,8 @@
 
 **Exercises:** [all 10 explained in plain words, with commands](exercises/README.md)
 
+**📋 [Cheat sheet](CHEATSHEET.md):** every concept, number, and command from Module 1 on one page
+
 ---
 
 ## What I built and measured
