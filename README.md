@@ -17,18 +17,34 @@ I learn by building. Every lesson ends with something working, committed here.
 
 ## 2. Progress
 
-### Curriculum: Module 1 (Foundations)
+### Curriculum
 
-| # | Lesson | Status |
+| # | Module | Status | Notes |
+|---|---|---|---|
+| 01 | Foundations | ✅ Done | [8 lessons + exercises guide](modules/01-foundations/README.md) |
+| 02 | Cloud Computing | ⏳ Next | |
+| 03 | Containerization | ⬜ | |
+| 04 | Kubernetes | ⬜ | |
+| 05 | Data Pipelines | ⬜ | Skim: less relevant to GPU serving |
+| 06 | MLOps | ⬜ | |
+| 07 | GPU Computing | ⬜ | ⭐ Core |
+| 08 | Monitoring & Observability | ⬜ | |
+| 09 | Infrastructure as Code | ⬜ | |
+| 10 | LLM Infrastructure | ⬜ | ⭐ Core |
+
+### Module 1 (Foundations): all lessons done
+
+| # | Lesson | Hands-on |
 |---|---|---|
-| 01 | Introduction to ML Infrastructure | ✅ Done |
-| 02 | Development Environment Setup | ✅ Done |
-| 03 | ML Infrastructure Basics | ⏳ Next |
-| 04 | ML Frameworks | ⬜ |
-| 05 | Cloud Intro | ⬜ |
-| 06 | Model Serving Basics | ⬜ |
-| 07 | Docker Basics | ⬜ |
-| 08 | API Development | ⬜ |
+| 01 | [Introduction to ML Infrastructure](modules/01-foundations/lesson-01/README.md) | — |
+| 02 | [Development Environment Setup](modules/01-foundations/lesson-02/README.md) | `verify-setup.sh` all green |
+| 03 | [ML Infrastructure Basics](modules/01-foundations/lesson-03/README.md) | Spam detector lifecycle + bad deploy + rollback |
+| 04 | [ML Frameworks](modules/01-foundations/lesson-04/README.md) | DistilBERT: INT8 = 1.9× smaller, 2.4× faster |
+| 05 | [Cloud Computing for ML](modules/01-foundations/lesson-05/README.md) | — |
+| 06 | [Model Serving Basics](modules/01-foundations/lesson-06/README.md) | — |
+| 07 | [Docker Basics](modules/01-foundations/lesson-07/README.md) | — |
+| 08 | [API Development](modules/01-foundations/lesson-08/README.md) | — |
+| — | [Exercises 01–10 explained](modules/01-foundations/exercises/README.md) | Labs + exercises built into the main project |
 
 ### Main project: LLM platform on AWS
 
@@ -207,7 +223,7 @@ minikube stop                                  # free RAM when done
 
 ## 7. Next steps
 
-1. **Lesson 03:** ML Infrastructure Basics
+1. **Module 2:** Cloud Computing
 2. **Request the AWS GPU quota:** Service Quotas → EC2 → *Running On-Demand G and VT instances* → 8 vCPUs in **us-east-1**
 3. **Phase 1 of the platform:** `terraform apply` the EKS + GPU node pool, then confirm Kubernetes sees the GPU
 4. **Cost rule:** GPU cluster ≈ $0.80/hour. Run `terraform destroy` at the end of every session.
@@ -218,7 +234,8 @@ minikube stop                                  # free RAM when done
 
 ```
 ai-infra-learning/
-├── modules/01-foundations/   # notes + code per module
+├── modules/
+│   └── 01-foundations/       # one folder per lesson (README + code) + exercises guide
 ├── projects/                 # the LLM platform build
 ├── exercises/                # practice exercises
 ├── notes/                    # errors and fixes, interview stories

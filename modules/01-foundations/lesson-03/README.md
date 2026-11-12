@@ -99,6 +99,27 @@ Or open **http://127.0.0.1:8000/docs** in a browser and click **Try it out**.
 
 **The takeaway:** a healthy server is not a good model. The API said "ok" the whole time while giving a wrong answer. This is the "silent failure" that makes ML infrastructure different from normal software.
 
+### How to roll back
+```bash
+mv models/spam-<bad-version>.joblib models/bad-<bad-version>.joblib   # keep it for investigation
+# restart the server: it loads the newest remaining version
+uvicorn serve:app --port 8000
+curl localhost:8000/health    # model_version is back to the previous one
+```
+
+### Next upgrade: a quality gate (not yet in `train.py`)
+Replace the two save lines at the bottom of `train.py` with:
+```python
+MIN_ACCURACY = 0.8
+if metrics["accuracy"] < MIN_ACCURACY:
+    print(f"BLOCKED: accuracy {metrics['accuracy']:.2f} < {MIN_ACCURACY}. Model not saved.")
+else:
+    joblib.dump(model, f"models/spam-{version}.joblib")
+    json.dump({"version": version, **metrics}, open(f"models/spam-{version}.json", "w"), indent=2)
+    print(f"Saved model {version}: {metrics}")
+```
+With the current 22 messages it will be **blocked**. Adding ~10 more spam and ~10 more ham examples should let it pass. That's evaluation acting as a real gate instead of a printout.
+
 ---
 
 ## Key terms (plain words)
